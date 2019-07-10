@@ -1,10 +1,5 @@
 from selenium import webdriver
 
-
-#driver = webdriver.Chrome(options=options)
-driver = webdriver.Chrome()
-
-
 def infinteScroll(driver):
     height = 0
     i = 0
@@ -17,3 +12,16 @@ def infinteScroll(driver):
         i = i+1
     html_source = driver.page_source.encode('utf-8')
     return html_source
+
+def main():
+    inputLink = input("")
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    #driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome()
+    driver.get(inputLink)
+    infinteScroll(driver)
+    
+    
+if __name__ == "__main__":
+    main()
