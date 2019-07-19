@@ -1,6 +1,12 @@
+"""
+This script allows to infinitely scroll dynamic website.
+"""
+
 from selenium import webdriver
 
 def infinteScroll(driver):
+    """The function which does the infinte scrolling with help of selenium."""
+    
     height = 0
     while height < driver.execute_script("return document.body.scrollHeight"):
         height = driver.execute_script("return document.body.scrollHeight")
